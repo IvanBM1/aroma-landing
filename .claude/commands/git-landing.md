@@ -1,6 +1,6 @@
 ---
 description: Verifica/inicializa Git local, crea el archivo .gitignore, genera el repositorio en GitHub y lo vincula con origin.
-model: claude-haiku-4-5-20251001
+model: claude-3-5-haiku
 effort: low
 ---
 

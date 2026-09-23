@@ -1,5 +1,5 @@
 ---
-description: Inicia el onboarding, pregunta por el estilo visual deseado y genera LANDING_PLAN.md.
+description: Inicia el onboarding, pregunta por el estilo visual deseado y genera docs/landing_plan.md.
 model: claude-sonnet-5
 effort: medium
 ---
@@ -40,7 +40,7 @@ effort: medium
      - *Editorial* (Diseño estilo revista de alta costura, serifas elegantes, bloques de texto amplios)
      - *Victorian Style* (Ornamentos detallados, bordes intrincados, tipografía clásica victoriana)
 
-2. **Generación de `LANDING_PLAN.md`:**
+2. **Generación de `docs/landing_plan.md`:**
    Una vez recibidas las respuestas (o si el usuario ya las proporcionó):
    - Traduce el **Estilo de Diseño seleccionado** a reglas concretas de UI/UX:
      - Definición de paleta de colores (Primary, Secondary, Accent, Background) en código HEX.

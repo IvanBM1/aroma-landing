@@ -12,16 +12,16 @@ effort: high
 # Instrucciones para /test-landing
 
 1. **Verificación del Entorno Local:**
-   - Asegura que el servidor local de desarrollo esté corriendo (o invoca internamente `/dev-landing`).
-   - Confirma la URL activa (ej: `http://localhost:3000`).
+   - Asegura que el servidor local de desarrollo esté corriendo (o invoca internamente `/server-landing`).
+   - Confirma la URL activa en localhost.
 
 2. **Ejecución de Pruebas Autónomas de Navegador (vía MCP Playwright):**
    Usa las herramientas del MCP de Playwright para simular a un usuario real siguiendo este protocolo de pruebas:
 
    - **Prueba 1: Carga Básica y Renderizado**
-     - Navega a `http://localhost:3000`.
+     - Navega a `http://localhost:PUERTO`.
      - Verifica que no existan errores fatales en la consola del navegador.
-     - Toma una captura de pantalla completa de la página (`screenshot.png`).
+     - Toma una captura de pantalla completa de la página (`screenshots/screenshot-web.png`).
 
    - **Prueba 2: Funcionalidad de Formularios y CTA**
      - Localiza todos los botones principales de llamada a la acción (CTA) y formularios de contacto/registro.
@@ -35,10 +35,10 @@ effort: high
    - **Prueba 4: Responsividad (Mobile / Desktop)**
      - Redimensiona el viewport del navegador a resolución móvil (390x844 px).
      - Verifica que el menú hamburguesa o navegación móvil funcione correctamente.
-     - Toma una captura de pantalla móvil (`screenshot-mobile.png`).
+     - Toma una captura de pantalla móvil (`screenshots/screenshot-mobile.png`).
 
-3. **Generación de Reporte (`TEST_REPORT.md`):**
-   - Crea un reporte detallado en `TEST_REPORT.md` estructurado en:
+3. **Generación de Reporte (`docs/test_report.md`):**
+   - Crea un reporte detallado en `docs/test_report.md` estructurado en:
      - **Resumen:** Total de pruebas ejecutadas, aprobadas y fallidas.
      - **Hallazgos y Evidencias:** Capturas de pantalla guardadas y descripción de errores visuales o funcionales detectados.
      - **Acciones Correctivas Requeridas:** Código o componentes específicos que necesitan parches.

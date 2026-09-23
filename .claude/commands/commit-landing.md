@@ -1,6 +1,6 @@
 ---
 description: Analiza los cambios en Git y realiza un commit semántico profesional siguiendo la especificación Conventional Commits.
-model: claude-haiku-4-5-20251001
+model: claude-3-5-haiku
 effort: low
 ---
 
@@ -11,7 +11,8 @@ effort: low
 
 # Instrucciones para /commit-landing
 
-1. **Inspección de Cambios en Git:**
+1. **Inspección de Cambios:**
+   - Si se utilzo el comando `/feature-landing` analiza el archivo para generar una descripción mas precisa en el commit.
    - Ejecuta `git status` para detectar los archivos modificados, creados o eliminados.
    - Ejecuta `git diff --staged` (o `git diff` si no hay cambios agregados al staging) para analizar el contenido de las modificaciones.
 

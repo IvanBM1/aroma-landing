@@ -6,7 +6,7 @@ effort: high
 
 # Parámetros de Ejecución
 - **Modelo:** Claude Sonnet 5
-- **Nivel de Esfuerzo:** Máximo (Pensamiento analítico riguroso)
+- **Nivel de Esfuerzo:** Alto (Pensamiento analítico)
 - **Roles:** Code Auditor, UX/UI Expert, SEO Specialist, QA Engineer
 
 # Instrucciones para /audit-landing
@@ -17,4 +17,4 @@ Aplica un análisis profundo sobre el repositorio actuando como 4 agentes indepe
 3. **Agente SEO:** Verifica OpenGraph, etiquetas semánticas HTML5 y `<h1>` único.
 4. **Agente de Performance:** Audita assets, tamaños de bundles y librerías externas.
 
-Si encuentras calificaciones menores a 8/10 en cualquier área, aplica los cambios y correcciones directamente en el código de forma autónoma antes de generar `AUDIT_REPORT.md`.
+Si encuentras calificaciones menores a 8/10 en cualquier área, aplica los cambios y correcciones directamente en el código de forma autónoma antes de generar `docs/audit_report.md`.
