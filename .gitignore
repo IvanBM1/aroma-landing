@@ -27,3 +27,4 @@ dist-ssr
 .playwright-mcp/
 screenshot*.png
 maps-direct-check.png
+/*.png
