@@ -33,7 +33,7 @@ export default function Reservations() {
     return (
       <section id="reservas" className="border-b border-muted">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="bg-surface p-8 shadow-card sm:p-12">
+          <div className="border border-muted p-8 sm:p-12">
             <h2 className="font-display text-3xl font-black text-foreground">¡Reserva confirmada!</h2>
             <p className="mt-3 max-w-md font-body text-foreground/80">
               Te esperamos, {form.nombre}. Guardamos tu mesa para el {form.fecha} a las {form.hora}, para{" "}
@@ -72,7 +72,7 @@ export default function Reservations() {
               required
               value={form.nombre}
               onChange={(e) => handleChange("nombre", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-primary focus:outline-none"
+              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
             />
           </div>
 
@@ -86,7 +86,7 @@ export default function Reservations() {
               required
               value={form.fecha}
               onChange={(e) => handleChange("fecha", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-primary focus:outline-none"
+              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
             />
           </div>
 
@@ -100,7 +100,7 @@ export default function Reservations() {
               required
               value={form.hora}
               onChange={(e) => handleChange("hora", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-primary focus:outline-none"
+              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
             />
           </div>
 
@@ -112,7 +112,7 @@ export default function Reservations() {
               id="personas"
               value={form.personas}
               onChange={(e) => handleChange("personas", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-primary focus:outline-none"
+              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
             >
               {Array.from({ length: 8 }, (_, i) => i + 1).map((n) => (
                 <option key={n} value={n}>
@@ -131,14 +131,14 @@ export default function Reservations() {
               type="text"
               value={form.comentario}
               onChange={(e) => handleChange("comentario", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-primary focus:outline-none"
+              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
             />
           </div>
 
           <div className="sm:col-span-2">
             <button
               type="submit"
-              className="rounded-sm bg-primary px-6 py-3 font-body text-lg font-bold text-foreground hover:bg-foreground hover:text-background"
+              className="rounded-sm bg-foreground px-6 py-3 font-body text-lg font-bold text-background transition-opacity hover:opacity-80"
             >
               Confirmar reserva
             </button>

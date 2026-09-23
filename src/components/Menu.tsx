@@ -34,9 +34,9 @@ export default function Menu() {
           ))}
         </div>
 
-        <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visibleItems.map((item) => (
-            <li key={item.id} className="flex flex-col justify-between bg-surface p-5 shadow-card">
+            <li key={item.id} className="flex flex-col justify-between border border-muted p-6">
               <div>
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-display text-lg font-bold text-foreground">{item.name}</h3>
@@ -45,13 +45,13 @@ export default function Menu() {
                 <p className="mt-2 font-body text-sm text-foreground/70">{item.note}</p>
               </div>
               <div className="mt-4 flex items-center justify-between gap-3">
-                <span className="inline-block w-fit rounded-sm bg-accent-warm/20 px-2 py-1 font-body text-xs font-semibold text-foreground">
+                <span className="inline-block w-fit border border-muted px-2 py-1 font-body text-xs font-semibold uppercase tracking-wide text-foreground/60">
                   {item.category}
                 </span>
                 <button
                   type="button"
                   onClick={() => addItem(item)}
-                  className="rounded-sm bg-primary px-3 py-1.5 font-body text-xs font-bold text-foreground hover:bg-foreground hover:text-background"
+                  className="rounded-sm bg-foreground px-3 py-1.5 font-body text-xs font-bold text-background transition-opacity hover:opacity-80"
                 >
                   Agregar
                 </button>

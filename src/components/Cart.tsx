@@ -119,7 +119,7 @@ export default function Cart() {
                 type="button"
                 disabled={lines.length === 0}
                 onClick={() => setStep("checkout")}
-                className="mt-4 w-full rounded-sm bg-primary px-6 py-3 font-body text-lg font-bold text-foreground hover:bg-foreground hover:text-background disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-primary disabled:hover:text-foreground"
+                className="mt-4 w-full rounded-sm bg-foreground px-6 py-3 font-body text-lg font-bold text-background transition-opacity hover:opacity-80 disabled:pointer-events-none disabled:opacity-40"
               >
                 Continuar
               </button>
@@ -138,6 +138,7 @@ export default function Cart() {
                   value="pickup"
                   checked={fulfillment === "pickup"}
                   onChange={() => setFulfillment("pickup")}
+                  className="accent-foreground"
                 />
                 Recoger en local
               </label>
@@ -148,6 +149,7 @@ export default function Cart() {
                   value="delivery"
                   checked={fulfillment === "delivery"}
                   onChange={() => setFulfillment("delivery")}
+                  className="accent-foreground"
                 />
                 Entrega a domicilio
               </label>
@@ -164,7 +166,7 @@ export default function Cart() {
                   required
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-primary focus:outline-none"
+                  className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
                 />
               </div>
             )}
@@ -180,7 +182,7 @@ export default function Cart() {
               </div>
               <button
                 type="submit"
-                className="mt-4 w-full rounded-sm bg-primary px-6 py-3 font-body text-lg font-bold text-foreground hover:bg-foreground hover:text-background"
+                className="mt-4 w-full rounded-sm bg-foreground px-6 py-3 font-body text-lg font-bold text-background transition-opacity hover:opacity-80"
               >
                 Confirmar pedido
               </button>
@@ -202,7 +204,7 @@ export default function Cart() {
                 Pedido confirmado. {fulfillment === "pickup" ? "Te esperamos en el local." : `Sale para: ${address}.`}
               </p>
               <p className="mt-4 font-body text-sm text-foreground/70">Código de seguimiento</p>
-              <p className="font-display text-3xl font-black text-primary">{trackingCode}</p>
+              <p className="font-display text-3xl font-black text-foreground">{trackingCode}</p>
               <p className="mt-4 font-body text-xs text-foreground/50">
                 Esta funcionalidad es una simulación — el pedido no se envía a ningún sistema real todavía.
               </p>

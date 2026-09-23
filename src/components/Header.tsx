@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-muted bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
-        <a href="#top" className="font-display text-xl font-black tracking-tight text-foreground sm:text-2xl">
+        <a href="#top" className="font-display text-lg font-black uppercase tracking-[0.15em] text-foreground sm:text-xl">
           Aroma
         </a>
         <nav aria-label="Navegación principal" className="hidden sm:block">
@@ -37,7 +37,7 @@ export default function Header() {
           </button>
           <a
             href="#reservas"
-            className="hidden rounded-sm bg-foreground px-4 py-2 font-body text-sm font-bold text-background hover:bg-primary hover:text-foreground sm:block"
+            className="hidden rounded-sm bg-foreground px-4 py-2 font-body text-sm font-bold text-background transition-opacity hover:opacity-80 sm:block"
           >
             Reservá tu mesa
           </a>

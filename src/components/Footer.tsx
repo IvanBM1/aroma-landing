@@ -6,17 +6,17 @@ export default function Footer() {
         <nav aria-label="Redes sociales">
           <ul className="flex gap-6 font-body text-sm font-medium">
             <li>
-              <a href="#top" className="hover:text-accent-warm">
+              <a href="#top" className="underline-offset-4 hover:underline">
                 Instagram
               </a>
             </li>
             <li>
-              <a href="#top" className="hover:text-accent-warm">
+              <a href="#top" className="underline-offset-4 hover:underline">
                 Facebook
               </a>
             </li>
             <li>
-              <a href="mailto:hola@aroma.cafe" className="hover:text-accent-warm">
+              <a href="mailto:hola@aroma.cafe" className="underline-offset-4 hover:underline">
                 hola@aroma.cafe
               </a>
             </li>

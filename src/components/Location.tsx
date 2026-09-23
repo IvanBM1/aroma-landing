@@ -7,7 +7,7 @@ const horario = [
 export default function Location() {
   return (
     <section id="ubicacion" className="border-b border-muted">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-20 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-6 py-24 sm:grid-cols-2">
         <div>
           <h2 className="font-display text-4xl font-black text-foreground sm:text-5xl">Ubicación y horario</h2>
           <p className="mt-4 font-body text-foreground/70">
