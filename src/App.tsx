@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion"
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
@@ -9,18 +10,20 @@ import { CartProvider } from "./context/CartContext"
 
 export default function App() {
   return (
-    <CartProvider>
-      <div className="font-body text-foreground">
-        <Header />
-        <main>
-          <Hero />
-          <Menu />
-          <Reservations />
-          <Location />
-        </main>
-        <Footer />
-        <Cart />
-      </div>
-    </CartProvider>
+    <MotionConfig reducedMotion="user">
+      <CartProvider>
+        <div className="font-body text-foreground">
+          <Header />
+          <main>
+            <Hero />
+            <Menu />
+            <Reservations />
+            <Location />
+          </main>
+          <Footer />
+          <Cart />
+        </div>
+      </CartProvider>
+    </MotionConfig>
   )
 }

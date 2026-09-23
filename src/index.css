@@ -21,6 +21,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 .ornament-divider {
   display: flex;
   align-items: center;

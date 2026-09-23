@@ -1,3 +1,6 @@
+import { motion } from "framer-motion"
+import { fadeUp, staggerContainer, viewportOnce } from "../lib/motion"
+
 const horario = [
   { dia: "Lunes a viernes", horas: "8:00 – 20:00" },
   { dia: "Sábados", horas: "9:00 – 21:00" },
@@ -6,15 +9,23 @@ const horario = [
 
 export default function Location() {
   return (
-    <section id="ubicacion" className="border-b-4 border-double border-accent-gold bg-background">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="font-display text-4xl font-black text-primary sm:text-5xl">Ubicación y horario</h2>
-        <div className="ornament-divider mt-4 max-w-xs font-display text-lg" aria-hidden="true">
+    <section id="ubicacion" className="scroll-mt-24 border-b-4 border-double border-accent-gold bg-background">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+        className="mx-auto max-w-6xl px-6 py-24"
+      >
+        <motion.h2 variants={fadeUp} className="font-display text-4xl font-black text-primary sm:text-5xl">
+          Ubicación y horario
+        </motion.h2>
+        <motion.div variants={fadeUp} className="ornament-divider mt-4 max-w-xs font-display text-lg" aria-hidden="true">
           ❦
-        </div>
+        </motion.div>
 
         <div className="mt-10 grid grid-cols-1 gap-16 sm:grid-cols-2">
-          <div>
+          <motion.div variants={fadeUp}>
             <p className="font-body text-lg text-foreground/70">Centro Histórico de Puebla, México.</p>
             <table className="mt-6 w-full max-w-sm border-collapse font-body text-lg">
               <tbody>
@@ -28,8 +39,9 @@ export default function Location() {
                 ))}
               </tbody>
             </table>
-          </div>
-          <iframe
+          </motion.div>
+          <motion.iframe
+            variants={fadeUp}
             title="Mapa — Centro Histórico de Puebla"
             src="https://www.google.com/maps?q=Centro+Hist%C3%B3rico+de+Puebla,+M%C3%A9xico&output=embed"
             className="min-h-64 w-full border-4 border-double border-accent-gold"
@@ -37,7 +49,7 @@ export default function Location() {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
