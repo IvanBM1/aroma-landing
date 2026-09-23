@@ -15,6 +15,7 @@ effort: low
    - Si se utilzo el comando `/feature-landing` analiza el archivo para generar una descripción mas precisa en el commit.
    - Ejecuta `git status` para detectar los archivos modificados, creados o eliminados.
    - Ejecuta `git diff --staged` (o `git diff` si no hay cambios agregados al staging) para analizar el contenido de las modificaciones.
+   - Pregunta al usuario si requiere que realice el merge a la rama master o main, o si solo se queda el cambio en la rama actual.
 
 2. **Formateo del Mensaje según Conventional Commits:**
    - Determina la naturaleza del cambio y asigna el **tipo (type)** correspondiente:

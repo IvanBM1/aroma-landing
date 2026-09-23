@@ -16,6 +16,9 @@ const initialState: FormState = {
   comentario: "",
 }
 
+const fieldClasses =
+  "mt-1 w-full border-0 border-b-2 border-muted bg-transparent px-1 py-2 font-body text-lg text-foreground focus:border-primary focus:outline-none"
+
 export default function Reservations() {
   const [form, setForm] = useState<FormState>(initialState)
   const [confirmed, setConfirmed] = useState(false)
@@ -31,11 +34,11 @@ export default function Reservations() {
 
   if (confirmed) {
     return (
-      <section id="reservas" className="border-b border-muted">
+      <section id="reservas" className="border-b-4 border-double border-accent-gold bg-background">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="border border-muted p-8 sm:p-12">
-            <h2 className="font-display text-3xl font-black text-foreground">¡Reserva confirmada!</h2>
-            <p className="mt-3 max-w-md font-body text-foreground/80">
+          <div className="border-4 border-double border-accent-gold bg-surface p-8 sm:p-12">
+            <h2 className="font-display text-3xl font-black text-primary">¡Reserva confirmada!</h2>
+            <p className="mt-3 max-w-md font-body text-lg text-foreground/80">
               Te esperamos, {form.nombre}. Guardamos tu mesa para el {form.fecha} a las {form.hora}, para{" "}
               {form.personas} persona{form.personas === "1" ? "" : "s"}.
             </p>
@@ -45,7 +48,7 @@ export default function Reservations() {
                 setForm(initialState)
                 setConfirmed(false)
               }}
-              className="mt-6 rounded-sm border-2 border-foreground px-5 py-2 font-body text-sm font-bold text-foreground hover:bg-foreground hover:text-background"
+              className="mt-6 rounded-sm border-2 border-primary px-5 py-2 font-body text-base font-bold uppercase tracking-wide text-primary hover:bg-primary hover:text-surface"
             >
               Hacer otra reserva
             </button>
@@ -56,14 +59,17 @@ export default function Reservations() {
   }
 
   return (
-    <section id="reservas" className="border-b border-muted">
+    <section id="reservas" className="border-b-4 border-double border-accent-gold bg-background">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="font-display text-4xl font-black text-foreground sm:text-5xl">Reservá tu mesa</h2>
-        <p className="mt-3 max-w-md font-body text-foreground/70">Guardá tu mesa. Sin vueltas.</p>
+        <h2 className="font-display text-4xl font-black text-primary sm:text-5xl">Reservá tu mesa</h2>
+        <p className="mt-3 max-w-md font-body text-lg text-foreground/70">Guardá tu mesa. Sin vueltas.</p>
 
-        <form onSubmit={handleSubmit} className="mt-8 grid max-w-2xl grid-cols-1 gap-5 sm:grid-cols-2">
+        <form
+          onSubmit={handleSubmit}
+          className="mt-8 grid max-w-2xl grid-cols-1 gap-6 border-4 border-double border-accent-gold bg-surface p-6 sm:grid-cols-2 sm:p-10"
+        >
           <div className="sm:col-span-2">
-            <label htmlFor="nombre" className="font-body text-sm font-bold text-foreground">
+            <label htmlFor="nombre" className="font-body text-sm font-bold uppercase tracking-wide text-secondary">
               Nombre
             </label>
             <input
@@ -72,12 +78,12 @@ export default function Reservations() {
               required
               value={form.nombre}
               onChange={(e) => handleChange("nombre", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
+              className={fieldClasses}
             />
           </div>
 
           <div>
-            <label htmlFor="fecha" className="font-body text-sm font-bold text-foreground">
+            <label htmlFor="fecha" className="font-body text-sm font-bold uppercase tracking-wide text-secondary">
               Fecha
             </label>
             <input
@@ -86,12 +92,12 @@ export default function Reservations() {
               required
               value={form.fecha}
               onChange={(e) => handleChange("fecha", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
+              className={fieldClasses}
             />
           </div>
 
           <div>
-            <label htmlFor="hora" className="font-body text-sm font-bold text-foreground">
+            <label htmlFor="hora" className="font-body text-sm font-bold uppercase tracking-wide text-secondary">
               Hora
             </label>
             <input
@@ -100,19 +106,19 @@ export default function Reservations() {
               required
               value={form.hora}
               onChange={(e) => handleChange("hora", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
+              className={fieldClasses}
             />
           </div>
 
           <div>
-            <label htmlFor="personas" className="font-body text-sm font-bold text-foreground">
+            <label htmlFor="personas" className="font-body text-sm font-bold uppercase tracking-wide text-secondary">
               Personas
             </label>
             <select
               id="personas"
               value={form.personas}
               onChange={(e) => handleChange("personas", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
+              className={fieldClasses}
             >
               {Array.from({ length: 8 }, (_, i) => i + 1).map((n) => (
                 <option key={n} value={n}>
@@ -123,7 +129,7 @@ export default function Reservations() {
           </div>
 
           <div>
-            <label htmlFor="comentario" className="font-body text-sm font-bold text-foreground">
+            <label htmlFor="comentario" className="font-body text-sm font-bold uppercase tracking-wide text-secondary">
               Comentario (opcional)
             </label>
             <input
@@ -131,14 +137,14 @@ export default function Reservations() {
               type="text"
               value={form.comentario}
               onChange={(e) => handleChange("comentario", e.target.value)}
-              className="mt-1 w-full rounded-sm border border-muted bg-surface px-3 py-2 font-body text-foreground focus:border-foreground focus:outline-none"
+              className={fieldClasses}
             />
           </div>
 
           <div className="sm:col-span-2">
             <button
               type="submit"
-              className="rounded-sm bg-foreground px-6 py-3 font-body text-lg font-bold text-background transition-opacity hover:opacity-80"
+              className="rounded-sm border border-accent-gold bg-primary px-6 py-3 font-body text-lg font-bold uppercase tracking-wide text-surface hover:bg-secondary"
             >
               Confirmar reserva
             </button>

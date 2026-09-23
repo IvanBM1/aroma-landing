@@ -1,28 +1,33 @@
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-background">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-display text-xl font-black">Aroma</p>
-        <nav aria-label="Redes sociales">
-          <ul className="flex gap-6 font-body text-sm font-medium">
-            <li>
-              <a href="#top" className="underline-offset-4 hover:underline">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#top" className="underline-offset-4 hover:underline">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="mailto:hola@aroma.cafe" className="underline-offset-4 hover:underline">
-                hola@aroma.cafe
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <p className="font-body text-xs text-background/60">© {new Date().getFullYear()} Aroma. Todos los derechos reservados.</p>
+    <footer className="border-t-4 border-double border-accent-gold bg-secondary text-surface">
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        <div className="ornament-divider mx-auto max-w-xs font-display text-lg text-accent-gold" aria-hidden="true">
+          ❦
+        </div>
+        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-display text-xl font-black tracking-wide text-accent-gold">Aroma</p>
+          <nav aria-label="Redes sociales">
+            <ul className="flex gap-6 font-body text-lg font-medium">
+              <li>
+                <a href="#top" className="underline-offset-4 hover:text-accent-gold hover:underline">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#top" className="underline-offset-4 hover:text-accent-gold hover:underline">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hola@aroma.cafe" className="underline-offset-4 hover:text-accent-gold hover:underline">
+                  hola@aroma.cafe
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <p className="font-body text-sm text-surface/60">© {new Date().getFullYear()} Aroma. Todos los derechos reservados.</p>
+        </div>
       </div>
     </footer>
   )
