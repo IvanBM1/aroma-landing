@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright test artifacts
+.playwright-mcp/
+screenshot*.png
+maps-direct-check.png

@@ -11,11 +11,11 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-muted bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-display text-2xl font-black tracking-tight text-foreground">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+        <a href="#top" className="font-display text-xl font-black tracking-tight text-foreground sm:text-2xl">
           Aroma
         </a>
-        <nav aria-label="Navegación principal">
+        <nav aria-label="Navegación principal" className="hidden sm:block">
           <ul className="flex items-center gap-8 font-body text-sm font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -31,7 +31,7 @@ export default function Header() {
             type="button"
             onClick={toggleCart}
             aria-label={`Abrir carrito, ${count} ${count === 1 ? "ítem" : "ítems"}`}
-            className="rounded-sm border-2 border-foreground px-3 py-2 font-body text-sm font-bold text-foreground hover:bg-foreground hover:text-background"
+            className="whitespace-nowrap rounded-sm border-2 border-foreground px-3 py-2 font-body text-sm font-bold text-foreground hover:bg-foreground hover:text-background"
           >
             Carrito ({count})
           </button>
