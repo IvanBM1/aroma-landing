@@ -1,7 +1,7 @@
 ---
 description: Ejecuta un panel de 4 sub-agentes para auditar y corregir el código.
 model: claude-sonnet-5
-effort: max
+effort: high
 ---
 
 # Parámetros de Ejecución

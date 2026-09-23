@@ -1,7 +1,7 @@
 ---
 description: Pipeline autónomo de principio a fin para diseñar, construir, auditar y desplegar una landing page.
 model: claude-sonnet-5
-effort: max
+effort: high
 ---
 
 # Parámetros de Ejecución

@@ -1,7 +1,7 @@
 ---
 description: Pipeline semi-automático, con punto de control interactivo en cada fase, para diseñar, construir, auditar, versionar y desplegar una landing page.
 model: claude-sonnet-5
-effort: max
+effort: high
 ---
 
 # Parámetros de Ejecución
