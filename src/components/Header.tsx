@@ -1,3 +1,5 @@
+import { useCart } from "../hooks/useCart"
+
 const navLinks = [
   { href: "#menu", label: "Menú" },
   { href: "#reservas", label: "Reservas" },
@@ -5,6 +7,8 @@ const navLinks = [
 ]
 
 export default function Header() {
+  const { count, toggleCart } = useCart()
+
   return (
     <header className="sticky top-0 z-50 border-b border-muted bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -22,12 +26,22 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <a
-          href="#reservas"
-          className="hidden rounded-sm bg-foreground px-4 py-2 font-body text-sm font-bold text-background hover:bg-primary hover:text-foreground sm:block"
-        >
-          Reservá tu mesa
-        </a>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={toggleCart}
+            aria-label={`Abrir carrito, ${count} ${count === 1 ? "ítem" : "ítems"}`}
+            className="rounded-sm border-2 border-foreground px-3 py-2 font-body text-sm font-bold text-foreground hover:bg-foreground hover:text-background"
+          >
+            Carrito ({count})
+          </button>
+          <a
+            href="#reservas"
+            className="hidden rounded-sm bg-foreground px-4 py-2 font-body text-sm font-bold text-background hover:bg-primary hover:text-foreground sm:block"
+          >
+            Reservá tu mesa
+          </a>
+        </div>
       </div>
     </header>
   )

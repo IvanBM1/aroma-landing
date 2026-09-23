@@ -11,7 +11,7 @@ export default function Location() {
         <div>
           <h2 className="font-display text-4xl font-black text-foreground sm:text-5xl">Ubicación y horario</h2>
           <p className="mt-4 font-body text-foreground/70">
-            Dirección de ejemplo — reemplazar por la dirección real de Aroma.
+            Centro Histórico de Puebla, México.
           </p>
           <table className="mt-6 w-full max-w-sm border-collapse font-body text-sm">
             <tbody>
@@ -26,13 +26,13 @@ export default function Location() {
             </tbody>
           </table>
         </div>
-        <div
-          className="flex min-h-64 items-center justify-center border border-muted bg-muted/30 font-body text-sm text-foreground/80"
-          role="img"
-          aria-label="Mapa de ejemplo — reemplazar por la ubicación real de Aroma"
-        >
-          Mapa de ejemplo — reemplazar por embed real (Google Maps / OpenStreetMap)
-        </div>
+        <iframe
+          title="Mapa — Centro Histórico de Puebla"
+          src="https://www.google.com/maps?q=Centro+Hist%C3%B3rico+de+Puebla,+M%C3%A9xico&output=embed"
+          className="min-h-64 w-full border border-muted"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     </section>
   )

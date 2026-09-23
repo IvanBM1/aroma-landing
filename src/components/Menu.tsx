@@ -1,10 +1,12 @@
 import { useState } from "react"
+import { useCart } from "../hooks/useCart"
 import { menuCategories, menuItems, type MenuCategory } from "../data/menu"
 
 type Filter = "Todo" | MenuCategory
 
 export default function Menu() {
   const [filter, setFilter] = useState<Filter>("Todo")
+  const { addItem } = useCart()
 
   const filters: Filter[] = ["Todo", ...menuCategories]
   const visibleItems = filter === "Todo" ? menuItems : menuItems.filter((item) => item.category === filter)
@@ -42,9 +44,18 @@ export default function Menu() {
                 </div>
                 <p className="mt-2 font-body text-sm text-foreground/70">{item.note}</p>
               </div>
-              <span className="mt-4 inline-block w-fit rounded-sm bg-accent-warm/20 px-2 py-1 font-body text-xs font-semibold text-foreground">
-                {item.category}
-              </span>
+              <div className="mt-4 flex items-center justify-between gap-3">
+                <span className="inline-block w-fit rounded-sm bg-accent-warm/20 px-2 py-1 font-body text-xs font-semibold text-foreground">
+                  {item.category}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => addItem(item)}
+                  className="rounded-sm bg-primary px-3 py-1.5 font-body text-xs font-bold text-foreground hover:bg-foreground hover:text-background"
+                >
+                  Agregar
+                </button>
+              </div>
             </li>
           ))}
         </ul>
